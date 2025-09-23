@@ -2,7 +2,7 @@
     "name": "midas-select",
     "displayName": "Midas Select",
     "description": "One-key smart cyclic selection with configurable auto editing for code, Markdown, and any text.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "katzertes",
     "repository": {
         "type": "git",
