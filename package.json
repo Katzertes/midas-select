@@ -33,9 +33,7 @@
         "text block",
         "url"
     ],
-    "activationEvents": [
-        "onCommand:midas-select.select"
-    ],
+    "activationEvents": [],
     "main": "./out/extension.js",
     "contributes": {
         "commands": [
@@ -47,13 +45,7 @@
         "keybindings": [
             {
                 "command": "midas-select.select",
-                "key": "cmd+alt+e",
                 "mac": "cmd+alt+e",
-                "when": "editorTextFocus"
-            },
-            {
-                "command": "midas-select.select",
-                "key": "ctrl+alt+e",
                 "win": "ctrl+alt+e",
                 "linux": "ctrl+alt+e",
                 "when": "editorTextFocus"

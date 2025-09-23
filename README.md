@@ -24,16 +24,16 @@ The extension automatically selects the most relevant block of text. Press the s
 
 1. URL: If the cursor is on a URL.
 2. Markdown Section: If the cursor is on a header line (# ...) in a Markdown file.
-2.1. The entire section, including the header line.
-2.2. The section content, excluding the header line.
+   1. The entire section, including the header line.
+   2. The section content, excluding the header line.
 3. Bracket Block:
-3.1. The content inside a pair of brackets (excluding the brackets).
-3.2. The entire block, including the brackets themselves.
+   1. The content inside a pair of brackets (excluding the brackets).
+   2. The entire block, including the brackets themselves.
 4. Indent Block: A block of lines with the same indentation.
 5. Empty Lines Block: A contiguous block of empty lines.
 6. Paragraph: A block of text separated by empty lines.
-6.1. The entire paragraph.
-6.2. From the cursor to the end of the paragraph.
+   1. The entire paragraph.
+   2. From the cursor to the end of the paragraph.
 
 ### #️⃣ Markdown Section
 
