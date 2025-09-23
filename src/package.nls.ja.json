@@ -1,0 +1,14 @@
+{
+    "midasSelect.configuration.title": "Midas Select",
+    "midasSelect.configuration.afterSelect.url.description": "URL選択後の追加動作",
+    "midasSelect.configuration.afterSelect.markdownHeader.description": "Markdown見出し行含むセクション選択後の追加動作",
+    "midasSelect.configuration.afterSelect.markdownContent.description": "Markdownセクション選択後の追加動作",
+    "midasSelect.configuration.afterSelect.bracket.description": "括弧内選択後の追加動作",
+    "midasSelect.configuration.afterSelect.bracketWithSymbols.description": "括弧記号含む選択後の追加動作",
+    "midasSelect.configuration.afterSelect.indentBlock.description": "インデントブロック選択後の追加動作",
+    "midasSelect.configuration.afterSelect.emptyLines.description": "空行ブロック選択後の追加動作",
+    "midasSelect.configuration.afterSelect.paragraph.description": "段落全体の選択後の追加動作",
+    "midasSelect.configuration.afterSelect.paragraphForward.description": "カーソル以降の段落選択後の追加動作",
+    "midasSelect.configuration.afterSelect.noSelection.description": "何も選択できなかった場合の追加動作"
+}
+

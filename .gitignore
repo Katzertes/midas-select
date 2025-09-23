@@ -1,0 +1,23 @@
+# VS Code 設定
+.vscode/
+.vscode-test/
+
+# ビルド出力
+out/
+out/test/
+
+# 開発用ソース
+resources/
+legacy/
+notes.md
+
+# npm 関連
+node_modules
+
+# テストや一時ファイル
+test/
+*.log
+.DS_Store
+
+# VSIX除外
+*.vsix

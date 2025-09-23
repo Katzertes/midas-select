@@ -1,0 +1,143 @@
+{
+    "name": "midas-select",
+    "displayName": "Midas Select",
+    "description": "One-key smart cyclic selection with configurable auto editing for code, Markdown, and any text.",
+    "version": "0.1.0",
+    "publisher": "katzertes",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/katzertes/midas-select"
+    },
+    "license": "MIT",
+    "icon": "images/icon.png",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "auto",
+        "block",
+        "bracket",
+        "code block",
+        "context",
+        "copy",
+        "expand",
+        "indent",
+        "markdown",
+        "paragraph",
+        "select",
+        "selection",
+        "smart",
+        "text block",
+        "url"
+    ],
+    "activationEvents": [
+        "onCommand:midas-select.select"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "midas-select.select",
+                "title": "Midas Select: Context-aware Selection"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "midas-select.select",
+                "key": "cmd+alt+e",
+                "mac": "cmd+alt+e",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "midas-select.select",
+                "key": "ctrl+alt+e",
+                "win": "ctrl+alt+e",
+                "linux": "ctrl+alt+e",
+                "when": "editorTextFocus"
+            }
+        ],
+        "configuration": {
+            "title": "%midasSelect.configuration.title%",
+            "properties": {
+                "midas-select.afterSelect.url": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.url.description%"
+                },
+                "midas-select.afterSelect.markdownHeader": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.markdownHeader.description%"
+                },
+                "midas-select.afterSelect.markdownContent": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.markdownContent.description%"
+                },
+                "midas-select.afterSelect.bracket": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.bracket.description%"
+                },
+                "midas-select.afterSelect.bracketWithSymbols": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.bracketWithSymbols.description%"
+                },
+                "midas-select.afterSelect.indentBlock": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.indentBlock.description%"
+                },
+                "midas-select.afterSelect.emptyLines": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.emptyLines.description%"
+                },
+                "midas-select.afterSelect.paragraph": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.paragraph.description%"
+                },
+                "midas-select.afterSelect.paragraphForward": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.paragraphForward.description%"
+                },
+                "midas-select.afterSelect.noSelection": {
+                    "type": "string",
+                    "enum": [ "none", "copy", "cut", "paste", "delete", "apply-comment", "format" ],
+                    "default": "none",
+                    "description": "%midasSelect.configuration.afterSelect.noSelection.description%"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint src --ext ts"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "18.x",
+        "@typescript-eslint/eslint-plugin": "^5.59.1",
+        "@typescript-eslint/parser": "^5.59.1",
+        "eslint": "^8.39.0",
+        "typescript": "^5.0.4"
+    }
+}
+

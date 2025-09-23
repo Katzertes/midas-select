@@ -1,0 +1,37 @@
+# テンポラリファイルを除外
+.DS_Store
+
+# VS Code 設定フォルダは不要
+.vscode/**
+.vscode-test/**
+
+# Git やクイックスタート関連ファイルは不要
+.gitignore
+vsc-extension-quickstart.md
+README.ja.md
+CHANGELOG.md
+assets/
+
+# 開発用ソースやリソースは除外
+src/
+resources/
+legacy/
+package-lock.json
+notes.md
+
+# 開発用設定ファイルは不要
+**/tsconfig.json
+**/webpack.config.js
+**/.eslintrc.js
+**/.npmignore
+*.map
+
+# テストフォルダは不要
+/test/
+out/test
+
+# node_modules は不要（依存は package.json で管理）
+node_modules
+
+
+現在上記の通りなので考慮の上、お願いします

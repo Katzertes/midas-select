@@ -1,0 +1,14 @@
+{
+    "midasSelect.configuration.title": "Midas Select",
+    "midasSelect.configuration.afterSelect.url.description": "Action after selecting a URL.",
+    "midasSelect.configuration.afterSelect.markdownHeader.description": "Action after selecting a Markdown section (with header).",
+    "midasSelect.configuration.afterSelect.markdownContent.description": "Action after selecting a Markdown section (content only).",
+    "midasSelect.configuration.afterSelect.bracket.description": "Action after selecting content inside brackets.",
+    "midasSelect.configuration.afterSelect.bracketWithSymbols.description": "Action after selecting content including brackets.",
+    "midasSelect.configuration.afterSelect.indentBlock.description": "Action after selecting an indent block.",
+    "midasSelect.configuration.afterSelect.emptyLines.description": "Action after selecting empty lines.",
+    "midasSelect.configuration.afterSelect.paragraph.description": "Action after selecting a whole paragraph.",
+    "midasSelect.configuration.afterSelect.paragraphForward.description": "Action after selecting from cursor to the end of a paragraph.",
+    "midasSelect.configuration.afterSelect.noSelection.description": "Action when no specific block could be selected."
+}
+
