@@ -21,3 +21,4 @@ test/
 
 # VSIX除外
 *.vsix
+.vscodeignore
