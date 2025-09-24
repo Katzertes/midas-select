@@ -1,14 +1,14 @@
 {
     "midasSelect.configuration.title": "Midas Select",
-    "midasSelect.configuration.afterSelect.url.description": "Action after selecting a URL.",
-    "midasSelect.configuration.afterSelect.markdownHeader.description": "Action after selecting a Markdown section (with header).",
-    "midasSelect.configuration.afterSelect.markdownContent.description": "Action after selecting a Markdown section (content only).",
-    "midasSelect.configuration.afterSelect.bracket.description": "Action after selecting content inside brackets.",
-    "midasSelect.configuration.afterSelect.bracketWithSymbols.description": "Action after selecting content including brackets.",
-    "midasSelect.configuration.afterSelect.indentBlock.description": "Action after selecting an indent block.",
-    "midasSelect.configuration.afterSelect.emptyLines.description": "Action after selecting empty lines.",
-    "midasSelect.configuration.afterSelect.paragraph.description": "Action after selecting a whole paragraph.",
-    "midasSelect.configuration.afterSelect.paragraphForward.description": "Action after selecting from cursor to the end of a paragraph.",
-    "midasSelect.configuration.afterSelect.noSelection.description": "Action when no specific block could be selected."
+    "midasSelect.configuration.afterSelect.url.description": "Set the action to perform after selecting a URL.",
+    "midasSelect.configuration.afterSelect.markdownHeader.description": "Set the action to perform after selecting a Markdown section (including the header).",
+    "midasSelect.configuration.afterSelect.markdownContent.description": "Set the action to perform after selecting a Markdown section (excluding the header).",
+    "midasSelect.configuration.afterSelect.bracket.description": "Set the action to perform after selecting content inside brackets.",
+    "midasSelect.configuration.afterSelect.bracketWithSymbols.description": "Set the action to perform after selecting a bracketed block including the brackets.",
+    "midasSelect.configuration.afterSelect.indentBlock.description": "Set the action to perform after selecting an indent block.",
+    "midasSelect.configuration.afterSelect.emptyLines.description": "Set the action to perform after selecting a block of empty lines.",
+    "midasSelect.configuration.afterSelect.paragraph.description": "Set the action to perform after selecting an entire paragraph.",
+    "midasSelect.configuration.afterSelect.paragraphForward.description": "Set the action to perform after selecting from the cursor to the end of the paragraph.",
+    "midasSelect.configuration.afterSelect.noSelection.description": "Set the action to perform when no selection could be made."
 }
 

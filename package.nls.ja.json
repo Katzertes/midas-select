@@ -1,14 +1,14 @@
 {
     "midasSelect.configuration.title": "Midas Select",
-    "midasSelect.configuration.afterSelect.url.description": "URL選択後の追加動作",
-    "midasSelect.configuration.afterSelect.markdownHeader.description": "Markdown見出し行含むセクション選択後の追加動作",
-    "midasSelect.configuration.afterSelect.markdownContent.description": "Markdownセクション選択後の追加動作",
-    "midasSelect.configuration.afterSelect.bracket.description": "括弧内選択後の追加動作",
-    "midasSelect.configuration.afterSelect.bracketWithSymbols.description": "括弧記号含む選択後の追加動作",
-    "midasSelect.configuration.afterSelect.indentBlock.description": "インデントブロック選択後の追加動作",
-    "midasSelect.configuration.afterSelect.emptyLines.description": "空行ブロック選択後の追加動作",
-    "midasSelect.configuration.afterSelect.paragraph.description": "段落全体の選択後の追加動作",
-    "midasSelect.configuration.afterSelect.paragraphForward.description": "カーソル以降の段落選択後の追加動作",
-    "midasSelect.configuration.afterSelect.noSelection.description": "何も選択できなかった場合の追加動作"
+    "midasSelect.configuration.afterSelect.url.description": "URLを選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.markdownHeader.description": "Markdownの見出し行を含むセクションを選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.markdownContent.description": "Markdownの見出し行を含まないセクションを選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.bracket.description": "括弧の内側を選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.bracketWithSymbols.description": "括弧全体（記号を含む）を選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.indentBlock.description": "インデントブロックを選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.emptyLines.description": "空行ブロックを選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.paragraph.description": "段落全体を選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.paragraphForward.description": "カーソル位置から段落の末尾までを選択した後の追加動作を設定します。",
+    "midasSelect.configuration.afterSelect.noSelection.description": "何も選択できなかった場合の追加動作を設定します。"
 }
 

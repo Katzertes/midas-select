@@ -4,6 +4,10 @@ All notable changes to the "midas-select" extension will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/),  
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - 2025-09-24
+- Fixed
+Implemented a two-stage bracket block search to better handle texts like unorganized memo notes where bracket pairs are not well managed.
+
 ## [0.1.1] - 2025-09-24
 - Moved localization files (`package.nls.*.json`) to the project root to follow standard extension structure.
 - Minor documentation fixes in `README.md`.

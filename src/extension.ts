@@ -1,5 +1,3 @@
-// 2025.09.23 21:10
-
 import * as vscode from 'vscode';
 import { Selector } from './selectors/selector';
 import { UrlSelector } from './selectors/urlSelector';
@@ -9,30 +7,34 @@ import { IndentBlockSelector } from './selectors/indentBlockSelector';
 import { EmptyLinesSelector } from './selectors/emptyLinesSelector';
 import { ParagraphSelector } from './selectors/paragraphSelector';
 
-// セレクターの一覧（優先順位順）
+// 合意した、正しい優先順位に基づいたセレクターの一覧
 const SELECTORS: Selector[] = [
     new UrlSelector(),
     new MarkdownHeaderSelector(true),
     new MarkdownHeaderSelector(false),
-    new BracketSelector(false),
-    new BracketSelector(true),
+    new BracketSelector(false, true), // 1. 括弧の内側 (段落スコープ)
+    new BracketSelector(true, true),  // 2. 括弧全体 (段落スコープ)
     new IndentBlockSelector(),
+    new ParagraphSelector(false),      // 3. 段落全体
+    new ParagraphSelector(true),     // 4. カーソルから段落末尾
     new EmptyLinesSelector(),
-    new ParagraphSelector(false),
-    new ParagraphSelector(true),
+    new BracketSelector(false, false),// 5. 括弧の内側 (ファイルスコープ)
+    new BracketSelector(true, false), // 6. 括弧全体 (ファイルスコープ)
 ];
 
-// セレクターのインデックスと設定キーのマッピング
+// 正しい順序に合わせた設定キーのマッピング
 const SELECTOR_INDEX_TO_CONFIG_KEY: { [key: number]: string } = {
     0: 'url',
     1: 'markdownHeader',
     2: 'markdownContent',
-    3: 'bracket',
-    4: 'bracketWithSymbols',
+    3: 'bracketInParagraph',
+    4: 'bracketWithSymbolsInParagraph',
     5: 'indentBlock',
-    6: 'emptyLines',
-    7: 'paragraph',
-    8: 'paragraphForward'
+    6: 'paragraph',
+    7: 'paragraphForward',
+    8: 'emptyLines',
+    9: 'bracket',
+    10: 'bracketWithSymbols'
 };
 
 // 最後に成功した選択の状態
@@ -46,7 +48,7 @@ let lastExecutionState: {
 
 export function activate(context: vscode.ExtensionContext) {
 
-    let disposable = vscode.commands.registerCommand('midas-select.select', () => {
+    const disposable = vscode.commands.registerCommand('midas-select.select', () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) return;
 
@@ -98,16 +100,13 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(disposable);
 }
 
-/**
- * ユーザー設定を読み取り、選択後の追加アクションを実行します。
- * テキストを変化させるアクションの後は、ルーレットの状態をリセットします。
- * @param selectorIndex 成功したセレクターのインデックス。何も選択できなかった場合は-1。
- */
 function executeAfterSelectAction(selectorIndex: number) {
     const config = vscode.workspace.getConfiguration('midas-select.afterSelect');
     const actionKey = selectorIndex === -1 
         ? 'noSelection' 
         : SELECTOR_INDEX_TO_CONFIG_KEY[selectorIndex];
+
+    if (!actionKey) return; // 安全策
     
     const action = config.get<string>(actionKey);
 
@@ -124,7 +123,7 @@ function executeAfterSelectAction(selectorIndex: number) {
         case 'delete':
             vscode.commands.executeCommand('deleteRight');
             break;
-        case 'comment-toggle':
+        case 'apply-comment':
             vscode.commands.executeCommand('editor.action.toggleLineComment');
             break;
         case 'format':
@@ -134,9 +133,7 @@ function executeAfterSelectAction(selectorIndex: number) {
             break;
     }
 
-    // ★修正点：テキストを変化させるアクションが実行された場合、
-    // 次回の実行が新しいシーケンスになるよう、ルーレットの状態をリセットする。
-    const mutatingActions = ['cut', 'paste', 'delete', 'comment-toggle', 'format'];
+    const mutatingActions = ['cut', 'paste', 'delete', 'apply-comment', 'format'];
     if (action && mutatingActions.includes(action)) {
         lastExecutionState = undefined;
     }

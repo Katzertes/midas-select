@@ -4,11 +4,9 @@
 
 Midas Select is a VS Code extension that provides intelligent, context-aware text selection **using a single shortcut**. Repeatedly pressing the key cycles through other possible selections. It is designed to be intuitive and versatile, working across any text file, not just code.
 
-```text
-URL > Markdown section > Parenthesized block
-> Indented block > Empty lines
-> Paragraphs (separated by empty lines) >
-```
+➡️ URL ➡️ Markdown section ➡️ Bracket block inside paragraph
+➡️ Indent block ➡️ Paragraph (separated by blank lines)
+➡️ Block of empty lines ➡️ Bracket block
 
 - Default Shortcut:
 <kbd>Cmd</kbd><kbd>Opt</kbd> + <kbd>E</kbd> on Mac
@@ -18,30 +16,39 @@ URL > Markdown section > Parenthesized block
 
 ---
 
+Here is the English translation of the provided Japanese text:
+
+***
+
 ## 📑 Selection Targets
 
-The extension automatically selects the most relevant block of text. Press the shortcut again to cycle through the following targets:
+The following targets are automatically selected. When used repeatedly, the selection cycles through the targets.
 
-1. URL: If the cursor is on a URL.
-2. Markdown Section: If the cursor is on a header line (# ...) in a Markdown file.
-   1. The entire section, including the header line.
-   2. The section content, excluding the header line.
-3. Bracket Block:
-   1. The content inside a pair of brackets (excluding the brackets).
-   2. The entire block, including the brackets themselves.
-4. Indent Block: A block of lines with the same indentation.
-5. Empty Lines Block: A contiguous block of empty lines.
-6. Paragraph: A block of text separated by empty lines.
-   1. The entire paragraph.
-   2. From the cursor to the end of the paragraph.
+1. URL (when the cursor is on it)
+2. In Markdown files, when the cursor is on a heading line starting with #  
+   1. The entire section including the heading line  
+   2. The entire section excluding the heading line  
+3. Bracket block within the current paragraph  
+   1. Inside the bracket characters (excluding the brackets)  
+   2. The entire block including the brackets  
+4. Indent block  
+5. Paragraph (a block of consecutive lines separated by blank lines)  
+   1. Entire paragraph (recognized by looking backwards from the cursor line)  
+   2. From the cursor line to the next blank line  
+6. Block of consecutive blank lines  
+7. Bracket block  
+   1. Inside the bracket characters (excluding the brackets)  
+   2. The entire block including the brackets  
 
-### #️⃣ Markdown Section
-
-The cursor must be **on a header line** for the section to be detected. The first selection includes the header, useful for cutting and pasting entire sections. The second selection (on the next key press) selects only the content.
+***
 
 ### 🔣 Bracket Block
 
-If the cursor is inside a bracketed expression, the content is selected. Pressing the key again expands the selection to include the brackets.
+When the cursor is inside, the text enclosed by bracket characters is selected. Repeating the selection includes the brackets themselves.
+
+The bracket block search is divided into two stages: within the paragraph and unlimited area, with the latter given the lowest priority.
+
+In source code, unmatched brackets usually trigger warnings and are rarely left unattended. However, in unorganized notes or similar files, brackets may not always be well paired. In such cases, if bracket pairs unintentionally exist far from the cursor position, there is a risk that an unexpectedly large area is selected. To prevent this, the bracket block selection is divided into two stages, where the latter has the lowest priority.
 
 #### 🔤 Supported Brackets
 ```text
@@ -53,6 +60,11 @@ Full-width:
 Full-width for Japanese:
 「 」 『 』 〔 〕 【 】
 ```
+
+### #️⃣ Markdown Section
+
+The cursor must be **on a header line** for the section to be detected. The first selection includes the header, useful for cutting and pasting entire sections. The second selection (on the next key press) selects only the content.
+
 
 ### ↔️ Indent Block
 
